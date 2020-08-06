@@ -83,7 +83,7 @@ async function download(config: JobConfig) {
 // snes -- from any network call
 const config: JobConfig = {
   batchSize: 10,
-  platform: platforms[1],
+  platform: platforms[38],
 };
 
 download(config);
