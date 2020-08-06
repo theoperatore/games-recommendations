@@ -8,7 +8,6 @@
     "start": "next start",
     "test": "jest --watch",
     "test:ci": "CI=true jest --ci",
-    "db": "ts-run src/db/explore.ts",
     "snes": "ts-run -r dotenv/config src/db/download.ts"
   },
   "husky": {
