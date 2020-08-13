@@ -3,13 +3,18 @@ import fetch from 'isomorphic-unfetch';
 
 const URL = `${process.env.DB_ENDPOINT}/games`;
 
-export default async function games(req: NextApiRequest, res: NextApiResponse) {
+export default async function gameDetails(
+  req: NextApiRequest,
+  res: NextApiResponse,
+) {
   // cors?
   if (req.method !== 'GET') return res.status(405).send('METHOD NOT SUPPORTED');
-  const limit = req.query.limit || '';
-  const offset = req.query.offset || '';
+  const gameId = req.query.gameId || '';
 
-  const url = `${URL}?limit=${limit}&offset=${offset}`;
+  if (!gameId)
+    return res.status(400).json({ message: 'missing required gameId' });
+
+  const url = `${URL}/${gameId}`;
   try {
     const r = await fetch(url);
     const d = await r.json();

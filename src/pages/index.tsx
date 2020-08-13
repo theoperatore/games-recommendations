@@ -21,7 +21,7 @@ function useGames(limit: number = 25, offset: number = 0) {
 }
 
 export default function Home() {
-  const { data, isValidating } = useGames(100, 0);
+  const { data, error, isValidating } = useGames(100, 0);
   return (
     <div>
       <Head>
@@ -31,14 +31,16 @@ export default function Home() {
 
       <main>
         {isValidating && !data && <p>loading...</p>}
-        {data &&
+        {<p>hi</p>}
+        {/* {!error &&
+          data &&
           data.games.map((game) => {
             return (
               <div key={game.id}>
                 <p>{game.name}</p>
               </div>
             );
-          })}
+          })} */}
       </main>
     </div>
   );

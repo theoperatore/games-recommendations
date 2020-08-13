@@ -35,8 +35,11 @@
     "babel-plugin-styled-components": "^1.11.1",
     "husky": "^4.2.3",
     "jest": "^26.3.0",
+    "postcss-flexbugs-fixes": "^4.2.1",
+    "postcss-preset-env": "^6.7.0",
     "prettier": "^2.0.5",
     "pretty-quick": "^2.0.1",
+    "tailwindcss": "^1.6.2",
     "typescript": "^3.8.3"
   }
 }
